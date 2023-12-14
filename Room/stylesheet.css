@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+body {
+  background-color: black;
+  margin: 20px;
+}
+#tray {
+  background-color: black;
+  width: 100%;
+  height: 320px;
+  top: 100%;
+  transform: translateY(-100%);
+  position: relative;
+  border-radius: 20px;
+  display: flex;
+    flex-direction: row;
+  border: 10px white solid;
+}
+.card {
+  width: 200px;
+  height: 300px;
+  background-color: rgb(76, 168, 255);
+  position: relative;
+  left: 50%;
+  transform: translateX(-150%) translateY(-50%);
+  margin-left: 5px;
+  margin-right: 5px;
+  top: 50%;
+  
+  border-radius: 10px;
+}
+
+#habitats, #cost {
+  height: 15px;
+  width: 180px;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: center;
+  background-color: white;
+}
+#stats {
+  height: 40px;
+  width: 180px;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  text-align: center;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+#stats > * {
+  background-color: rgb(76, 168, 255);
+  width: 85px;
+  border-radius: 5px;
+  position: relative;
+  height: 15px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+}
+#title {
+  width: 180px;
+  height: 20px;
+  background-color: white;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  margin-top: 10px;
+
+  text-align: center;
+  padding: 20px 0;
+}
+#power {
+  width: 180px;
+  min-height: 100px;
+  background-color: orange;
+  border-radius: 5px;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  font-size: 14px;
+}
+* {
+  font-family: 'Nova Square';
+  user-select: none;
+}

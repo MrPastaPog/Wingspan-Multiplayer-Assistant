@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+body {
+  background-color: black;
+}
+button, input {
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+#confirm {
+  border: 5px white solid;
+  border-radius: 5px;
+  background-color: black;
+  height: 50px;
+  width: 200px;
+  color: white;
+  font-size: 30px;
+  transition: 0.3s;
+}
+#confirm:hover {
+  color: gray;
+  border-color: gray;
+}
+#username {
+  width: 200px;
+  height: 50px;
+  border: 5px white solid;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  font-size: 30px;
+}
+#room {
+  width: 200px;
+  height: 50px;
+  border: 5px white solid;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 30px;
+  color: white;
+}
+.center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+
+}
+.center > * {
+  margin: 10px;
+}
+#username::-webkit-input-placeholder, #room::-webkit-input-placeholder {
+  color: white;
+  text-align: center;
+}
+* {
+  font-family: 'Nova Square';
+}
+h1 {
+  color: white;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
