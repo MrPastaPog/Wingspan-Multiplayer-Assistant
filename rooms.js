@@ -34,12 +34,16 @@ class Room {
     for(let i = 0; i < 3; i++) {
       this.Tray.push(this.pickCardAndRemoveRandom())
     }
+    console.log(this.Tray)
   }
   refillTray() {
     let missing = 3 - this.Tray.length
     for(let i = 0; i < missing; i++) {
       this.Tray.push(this.pickCardAndRemoveRandom())
     }
+  }
+  resetDeck() {
+    this.Deck = structuredClone(Birds)
   }
 }
 

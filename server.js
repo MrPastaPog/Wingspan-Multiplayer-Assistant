@@ -23,6 +23,7 @@ io.on('connection', (sock) => {
   let room = rooms[roomid]
   room.addClient(username, sock)
   if(room.Clients.length === 1) {
+    room.resetDeck()
     room.resetTray()
   }
   io.to(roomid).emit('Update Cards', room.Tray)
@@ -31,6 +32,10 @@ io.on('connection', (sock) => {
     console.log(index)
     room.pickCardAndRemoveTray(index)
     console.log(room.Tray)
+    io.to(roomid).emit('Update Cards', room.Tray)
+  })
+  sock.on('Reset Tray', () => {
+    room.resetTray()
     io.to(roomid).emit('Update Cards', room.Tray)
   })
   sock.on('disconnect', () => {

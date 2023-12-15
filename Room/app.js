@@ -28,6 +28,9 @@ $(function() {
     socket.emit('RemoveCard', index)
     
   })
+  $('#resettray').click(function () {
+    socket.emit('Reset Tray')
+  })
   socket.on('Update Cards', (tray) => {
     console.log(tray)
     switch (tray.length) {
@@ -43,6 +46,8 @@ $(function() {
         $('.card.second').css("visibility", "hidden");
         $('.card.first').css("visibility", "hidden");
         break;
+      default:
+        $('.card').css('visibility', 'visible')
     }
     let order = ['first', 'second', 'third'];
     for(let i = 0; i < tray.length; i++) {
