@@ -4,10 +4,28 @@ class Room {
   constructor(roomid) {
     this.roomid = roomid
     this.Deck = structuredClone(Birds)
-    this.Birdfeeder = structuredClone(Birds)
+    this.Birdfeeder = []
+    this.ChosenDice = []
+    this.dice = ['Fish.png', 'Fruit.png', 'Seed.png', 'Rodent.png', 'Invertebrate.png', 'Invertebrate and Seed.png']
     this.Tray = []
+    this.upCard = [];
     this.BonusCardDeck = structuredClone(Bonuscards)
     this.Clients = []
+  }
+  rerollBirdfeeder() {
+    this.Birdfeeder = []
+    this.ChosenDice = []
+    for (let i = 0; i < 5; i++) {
+      
+      this.Birdfeeder.push(this.dice[Math.floor(Math.random()*this.dice.length)])
+    }
+  }
+  rerollChosenDice () {
+    let diceamount = this.ChosenDice.length
+    this.ChosenDice = []
+    for (let i = 0; i < diceamount; i++) {
+      this.ChosenDice.push(this.dice[Math.floor(Math.random()*this.dice.length)])
+    }
   }
   addClient(name, sock) {
     this.Clients.push({
@@ -32,7 +50,11 @@ class Room {
   resetTray() {
     this.Tray = []
     for(let i = 0; i < 3; i++) {
-      this.Tray.push(this.pickCardAndRemoveRandom())
+      let card = this.pickCardAndRemoveRandom()
+      if (card !== undefined) {
+        this.Tray.push(card)
+      }
+      
     }
     console.log(this.Tray)
   }
